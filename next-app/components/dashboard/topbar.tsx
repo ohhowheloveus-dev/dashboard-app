@@ -6,12 +6,33 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Home, LayoutGrid } from "lucide-react"
 
-const avatars = ["U1", "U2", "U3", "U4"]
+const avatars = [
+  {
+    name: "짱구",
+    initials: "짱",
+    image: "/짱구.png",
+  },
+  {
+    name: "짱아",
+    initials: "짱",
+    image: "/짱아.jpeg",
+  },
+  {
+    name: "짱구 엄마",
+    initials: "엄",
+    image: "/짱구엄마.png",
+  },
+  {
+    name: "짱구 아빠",
+    initials: "아",
+    image: "/짱구아빠.png",
+  },
+]
 
 export function Topbar() {
   return (
@@ -42,9 +63,16 @@ export function Topbar() {
       </div>
       <div className="flex items-center gap-3">
         <div className="flex -space-x-2">
-          {avatars.map((a) => (
-            <Avatar key={a} className="h-7 w-7 border-2 border-background">
-              <AvatarFallback className="text-[10px]">{a}</AvatarFallback>
+          {avatars.map((avatar) => (
+            <Avatar
+              key={avatar.name}
+              className="h-7 w-7 border-2 border-background"
+              title={avatar.name}
+            >
+              <AvatarImage src={avatar.image} alt={avatar.name} />
+              <AvatarFallback className="text-[10px]">
+                {avatar.initials}
+              </AvatarFallback>
             </Avatar>
           ))}
           <Avatar className="h-7 w-7 border-2 border-background">

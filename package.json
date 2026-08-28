@@ -1,0 +1,7 @@
+{
+  "name": "dashboard-app",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix next-app run dev"
+  }
+}

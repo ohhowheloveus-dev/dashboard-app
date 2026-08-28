@@ -14,7 +14,7 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
   Home,
@@ -50,7 +50,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="p-4">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-semibold">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary font-semibold text-primary-foreground">
             Q
           </div>
           <div>
@@ -101,14 +101,19 @@ export function AppSidebar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Avatar className="h-8 w-8">
-              <AvatarFallback>N</AvatarFallback>
+              <AvatarImage src="/짱구.png" alt="짱구 아바타" />
+              <AvatarFallback>짱</AvatarFallback>
             </Avatar>
             <div>
               <div className="flex items-center gap-1 text-sm font-medium">
                 Nathan Scott
-                <span className="rounded bg-primary/20 px-1 py-0.5 text-[9px] font-semibold text-primary">PRO</span>
+                <span className="rounded bg-primary/20 px-1 py-0.5 text-[9px] font-semibold text-primary">
+                  PRO
+                </span>
               </div>
-              <div className="text-xs text-muted-foreground">scott@example.com</div>
+              <div className="text-xs text-muted-foreground">
+                scott@example.com
+              </div>
             </div>
           </div>
           <MoreHorizontal className="h-4 w-4 text-muted-foreground" />
